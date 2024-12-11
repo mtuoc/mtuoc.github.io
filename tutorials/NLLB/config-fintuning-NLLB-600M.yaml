@@ -17,7 +17,7 @@ tgt_subword_nbest: 1
 tgt_subword_alpha: 0.0
 # Corpus opts:
 data:
-    romcro:
+    corpus1:
         path_src: "train.es"
         path_tgt: "train.hr"
         transforms: [sentencepiece, prefix, suffix, filtertoolong]
