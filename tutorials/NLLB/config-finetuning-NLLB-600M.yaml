@@ -1,4 +1,15 @@
-share_vocab: true
+# Corpus opts:
+data:
+    corpus1:
+        path_src: "train.es"
+        path_tgt: "train.hr"
+        transforms: [sentencepiece, prefix, suffix, filtertoolong]
+        weight: 10
+        src_prefix: "spa_Latn"
+        tgt_prefix: "hrv_Latn"
+        src_suffix: "</s>"
+        tgt_suffix: ""
+
 src_vocab: "shared_vocabulary.txt"
 
 src_words_min_frequency: 1
@@ -15,17 +26,7 @@ src_subword_nbest: 1
 src_subword_alpha: 0.0
 tgt_subword_nbest: 1
 tgt_subword_alpha: 0.0
-# Corpus opts:
-data:
-    corpus1:
-        path_src: "train.es"
-        path_tgt: "train.hr"
-        transforms: [sentencepiece, prefix, suffix, filtertoolong]
-        weight: 10
-        src_prefix: "spa_Latn"
-        tgt_prefix: "hrv_Latn"
-        src_suffix: "</s>"
-        tgt_suffix: ""
+
 update_vocab: true
 train_from: "nllb-200-600M-onmt.pt"
 reset_optim: all
